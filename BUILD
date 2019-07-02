@@ -1,5 +1,4 @@
 cc_binary(
-
   name = "main-static",
   srcs = ["src/main.cpp"],
   deps = ["//math:math"],
@@ -13,7 +12,7 @@ cc_binary(
 cc_binary(
   name = "main-dynamic",
   srcs = ["src/main.cpp"],
-  deps = ["//math:math"],
+  deps = [ "//math:math_dynamic" ],
 
   # links with the math library dynamically
   # uses the //math:math_dll_import cc_import to get access to the
