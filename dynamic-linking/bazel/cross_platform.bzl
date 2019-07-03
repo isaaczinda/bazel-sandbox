@@ -2,7 +2,7 @@ def cc_posix_binary(name, srcs = [], **kargs):
     native.cc_binary(
         name = name,
         srcs = select({
-            "@bazel_tools//src/conditions:windows": ["noop.cpp"],
+            "@bazel_tools//src/conditions:windows": ["//bazel:noop.cpp"],
             "//conditions:default": srcs,
         }),
         **kargs
@@ -14,7 +14,7 @@ def cc_windows_binary(name, srcs = [], **kargs):
         name = name,
         srcs = select({
             "@bazel_tools//src/conditions:windows": srcs,
-            "//conditions:default": ["noop.cpp"],
+            "//conditions:default": ["//bazel:noop.cpp"],
         }),
         **kargs
     )

@@ -1,0 +1,6 @@
+workspace(name = "story")
+
+local_repository(
+    name = "printer",
+    path = "../printer",
+)
